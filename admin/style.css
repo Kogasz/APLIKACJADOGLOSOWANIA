@@ -1,0 +1,13 @@
+body{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 10%;
+    justify-content: center;
+    align-items: center;
+    
+}
+table{
+    border: 2px;
+}
