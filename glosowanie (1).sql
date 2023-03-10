@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Mar 2023, 16:03
+-- Czas generowania: 10 Mar 2023, 16:23
 -- Wersja serwera: 10.4.14-MariaDB
 -- Wersja PHP: 7.4.9
 
@@ -29,17 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kandydaci` (
   `ID` int(11) NOT NULL,
-  `Kandydaci` text COLLATE utf8mb4_polish_ci NOT NULL
+  `Kandydaci` text COLLATE utf8mb4_polish_ci NOT NULL,
+  `Głosy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
 -- Zrzut danych tabeli `kandydaci`
 --
 
-INSERT INTO `kandydaci` (`ID`, `Kandydaci`) VALUES
-(1, 'Kandydat1'),
-(2, 'Kandydat2'),
-(3, 'Kandydat3');
+INSERT INTO `kandydaci` (`ID`, `Kandydaci`, `Głosy`) VALUES
+(1, 'Kandydat1', 2),
+(2, 'Kandydat2', 1),
+(3, 'Kandydat3', 1);
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,10 @@ CREATE TABLE `klienci` (
 --
 
 INSERT INTO `klienci` (`ID`, `PESEL`) VALUES
-(1, 22222222);
+(1, 22222222),
+(2, 2147483647),
+(3, 33333333),
+(4, 222222222);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -83,13 +87,13 @@ ALTER TABLE `klienci`
 -- AUTO_INCREMENT dla tabeli `kandydaci`
 --
 ALTER TABLE `kandydaci`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

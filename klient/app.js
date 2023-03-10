@@ -28,3 +28,6 @@ async function d_pesel(){
     console.log(input)
     getDATA()
 }
+async function klik(){
+    
+}

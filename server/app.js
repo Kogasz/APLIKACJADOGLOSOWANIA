@@ -54,7 +54,18 @@ app.get("/get/:pesel",function(req,res){
         }
     })
 })
-
+app.get("/addg/:glosy", function(req,res){
+    const glosy = req.params.glosy
+    const sqll = `UPDATE kandydaci SET Głosy = Głosy + 1 WHERE ID = '${glosy}'`
+    con.query(sqll, function(err, result, fields){
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.send("dodano")
+        }
+    })
+})
 
 
 
